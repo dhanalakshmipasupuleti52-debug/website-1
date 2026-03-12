@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tourist Places</title>
+<link rel="stylesheet" href="wdesign.css">
+</head>
+
+<body>
+
+<header>
+<h1>Tourist Places</h1>
+<nav>
+<ul>
+<li><a href="windex.html">Home</a></li>
+<li><a href="wplaces.html">Places</a></li>
+<li><a href="wtickets.html">Tickets</a></li>
+<li><a href="wcontact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="section" id="places">
+
+<h2>Popular Tourist Destinations</h2>
+
+<div class="cards">
+
+<!-- Taj Mahal -->
+<div class="card">
+<img src="tajmahal.jpg" alt="Taj Mahal">
+<div class="card-content">
+<h3>Taj Mahal</h3>
+<p>Located in Agra, India, the Taj Mahal is one of the Seven Wonders of the World and a symbol of love.</p>
+<button onclick="bookPlace('Taj Mahal')">Book Now</button>
+</div>
+</div>
+
+<!-- Eiffel Tower -->
+<div class="card">
+<img src="istockphoto-2119799972-612x612.jpg" alt="Eiffel Tower">
+<div class="card-content">
+<h3>Eiffel Tower</h3>
+<p>The Eiffel Tower in Paris is a global cultural icon of France.</p>
+<button onclick="bookPlace('Eiffel Tower')">Book Now</button>
+</div>
+</div>
+
+<!-- Great Wall -->
+<div class="card">
+<img src="photo-1512453979798-5ea266f8880c.jpg" alt="Great Wall">
+<div class="card-content">
+<h3>Great Wall of China</h3>
+<p>An ancient series of walls and fortifications.</p>
+<button onclick="bookPlace('Great Wall of China')">Book Now</button>
+</div>
+</div>
+
+<!-- Statue of Liberty -->
+<div class="card">
+<img src="pexels-photo-5658242.jpeg" alt="Statue of Liberty">
+<div class="card-content">
+<h3>Statue of Liberty</h3>
+<p>A symbol of freedom in the United States.</p>
+<button onclick="bookPlace('Statue of Liberty')">Book Now</button>
+</div>
+</div>
+
+<!-- Colosseum -->
+<div class="card">
+<img src="download (1).jpg" alt="Colosseum">
+<div class="card-content">
+<h3>Colosseum</h3>
+<p>The Colosseum in Rome is an ancient amphitheatre.</p>
+<button onclick="bookPlace('Colosseum')">Book Now</button>
+</div>
+</div>
+
+<!-- Machu Picchu -->
+<div class="card">
+<img src="download (2).jpg" alt="Machu Picchu">
+<div class="card-content">
+<h3>Machu Picchu</h3>
+<p>Machu Picchu is a famous ancient Incan city.</p>
+<button onclick="bookPlace('Machu Picchu')">Book Now</button>
+</div>
+</div>
+
+<!-- Sydney Opera House -->
+<div class="card">
+<img src="d85280d5-3c4f-4f54-bd7a-6fc5cc68597f-10732-sydney-sydney-and-bondi-tour-with-sydney-opera-house-tour-01.jpg" alt="Sydney Opera House">
+<div class="card-content">
+<h3>Sydney Opera House</h3>
+<p>A world-famous performing arts center in Australia.</p>
+<button onclick="bookPlace('Sydney Opera House')">Book Now</button>
+</div>
+</div>
+
+<!-- Burj Khalifa -->
+<div class="card">
+<img src="download (3).jpg" alt="Burj Khalifa">
+<div class="card-content">
+<h3>Burj Khalifa</h3>
+<p>The tallest building in the world located in Dubai.</p>
+<button onclick="bookPlace('Burj Khalifa')">Book Now</button>
+</div>
+</div>
+
+<!-- Pyramids of Giza -->
+<div class="card">
+<img src="hq720.jpg" alt="Pyramids of Giza">
+<div class="card-content">
+<h3>Pyramids of Giza</h3>
+<p>Ancient pyramids located in Egypt.</p>
+<button onclick="bookPlace('Pyramids of Giza')">Book Now</button>
+</div>
+</div>
+
+<!-- Santorini -->
+<div class="card">
+<img src="download (4).jpg" alt="Santorini">
+<div class="card-content">
+<h3>Santorini</h3>
+<p>A beautiful island in Greece.</p>
+<button onclick="bookPlace('Santorini')">Book Now</button>
+</div>
+</div>
+
+<!-- Niagara Falls -->
+<div class="card">
+<img src="download (6).jpg" alt="Niagara Falls">
+<div class="card-content">
+<h3>Niagara Falls</h3>
+<p>A famous waterfall between USA and Canada.</p>
+<button onclick="bookPlace('Niagara Falls')">Book Now</button>
+</div>
+</div>
+
+<!-- Mount Fuji -->
+<div class="card">
+<img src="download (5).jpg" alt="Mount Fuji">
+<div class="card-content">
+<h3>Mount Fuji</h3>
+<p>The highest mountain in Japan.</p>
+<button onclick="bookPlace('Mount Fuji')">Book Now</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<script>
+function bookPlace(place){
+alert(place + " added for booking!");
+localStorage.setItem("selectedPlace", place);
+window.location.href = "wtickets.html";
+}
+</script>
+
+</body>
+</html>

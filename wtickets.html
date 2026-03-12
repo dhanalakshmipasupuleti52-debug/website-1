@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book Tickets</title>
+<link rel="stylesheet" href="wdesign.css">
+</head>
+
+<body>
+
+<header>
+<h1>Tourist Places</h1>
+<nav>
+<ul>
+<li><a href="windex.html">Home</a></li>
+<li><a href="wplaces.html">Places</a></li>
+<li><a href="wtickets.html">Tickets</a></li>
+<li><a href="wcontact.html">Contact</a></li>
+
+</ul>
+</nav>
+</header>
+
+<section class="ticket-section">
+
+<h2>Book Your Tickets</h2>
+
+<div class="ticket-box">
+
+<form id="ticketForm">
+
+<input type="text" id="name" placeholder="Full Name" required><br><br>
+
+<input type="email" id="email" placeholder="Email Address" required><br><br>
+
+<select id="place" required>
+<option value="">Select Place</option>
+<option>Taj Mahal</option>
+<option>Eiffel Tower</option>
+<option>Great Wall of China</option>
+<option>Statue of Liberty</option>
+</select><br><br>
+
+<input type="date" id="date" required><br><br>
+
+<input type="number" id="count" placeholder="Number of Tickets" required><br><br>
+
+<button type="submit">Book Now</button>
+
+</form>
+
+</div>
+
+<h2>Booked Tickets</h2>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Place</th>
+<th>Date</th>
+<th>Tickets</th>
+<th>Remove</th>
+</tr>
+</thead>
+
+<tbody id="ticketList"></tbody>
+
+</table>
+
+</section>
+
+<script>
+
+let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+
+function showTickets(){
+
+let list = document.getElementById("ticketList");
+list.innerHTML="";
+
+tickets.forEach((t,index)=>{
+
+list.innerHTML += `
+<tr>
+<td>${t.name}</td>
+<td>${t.email}</td>
+<td>${t.place}</td>
+<td>${t.date}</td>
+<td>${t.count}</td>
+<td><button onclick="deleteTicket(${index})">Delete</button></td>
+</tr>
+`;
+
+});
+
+}
+
+document.getElementById("ticketForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let ticket={
+name:document.getElementById("name").value,
+email:document.getElementById("email").value,
+place:document.getElementById("place").value,
+date:document.getElementById("date").value,
+count:document.getElementById("count").value
+};
+
+tickets.push(ticket);
+
+localStorage.setItem("tickets",JSON.stringify(tickets));
+
+showTickets();
+
+this.reset();
+
+});
+
+function deleteTicket(index){
+
+tickets.splice(index,1);
+
+localStorage.setItem("tickets",JSON.stringify(tickets));
+
+showTickets();
+
+}
+
+showTickets();
+
+</script>
+
+</body>
+</html>
